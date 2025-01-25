@@ -1,0 +1,1 @@
+export { SharedInfo } from './SharedInfo'
