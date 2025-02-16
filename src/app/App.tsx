@@ -1,10 +1,7 @@
 import { FC } from 'react'
 
-import { ImageSlider } from '../shared/ui/ImageSlider'
-import { Navbar } from '../shared/ui/Navbar'
-import { ProfileCard } from '../shared/ui/ProfileCard'
-import { SharedInfo } from '../shared/ui/SharedInfo'
-import { Join } from '../widgets/Join'
+import { Card, ImageSlider, Navbar } from '@/shared'
+
 import styles from './App.module.scss'
 
 const App: FC = () => {
@@ -18,13 +15,33 @@ const App: FC = () => {
                 <div style={{ marginBottom: '20px' }}>
                     <ImageSlider />
                 </div>
-                <Join />
-                <div>
+                <div
+                    style={{
+                        maxWidth: '70vw',
+                        display: 'grid',
+                        gap: '20px',
+                        gridTemplateColumns: '1fr 1fr',
+                    }}
+                >
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+                <div className={styles.textBlock}>
+                    АРТЦЕХ — это площадка для творчества и развития личности
+                    подростков от 10 до 18 лет. Мы учим писать сценарии, снимать
+                    и монтировать фильмы, записывать звук и фотографировать.
+                </div>
+                {/* <Join />     */}
+                {/* <div>
                     <SharedInfo />
                 </div>
                 <div>
                     <ProfileCard />
-                </div>
+                </div> */}
             </div>
         </div>
     )

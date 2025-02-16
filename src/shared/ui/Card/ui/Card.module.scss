@@ -1,0 +1,44 @@
+.card {
+    position: relative;
+    display: inline-block;
+
+    img {
+        display: block;
+        width: 100%; // Адаптируйте под свои нужды
+        height: auto; // Адаптируйте под свои нужды
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #18092c;
+        mix-blend-mode: multiply;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+    }
+
+    p {
+        position: absolute;
+        color: white;
+        font-size: 34px;
+        top: 10%;
+        left: 5%;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+}
+
+.card:hover {
+    &:before {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    p {
+        color: #ff2970;
+    }
+}

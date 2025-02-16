@@ -1,7 +1,17 @@
 import react from '@vitejs/plugin-react-swc'
+import path from 'path'
+import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
+    resolve: {
+        alias: {
+            '@': path.resolve(
+                fileURLToPath(new URL('.', import.meta.url)),
+                './src',
+            ),
+        },
+    },
 })

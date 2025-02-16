@@ -45,15 +45,15 @@ export const Modal: React.FC<ModalProps> = ({
                 {fields.map((field) => (
                     <TextField
                         key={field.name}
+                        fullWidth
                         name={field.name}
                         label={field.label}
                         type={field.type || 'text'}
                         value={formValues[field.name] || ''}
-                        onChange={handleInputChange}
-                        fullWidth
                         margin="normal"
                         multiline={field.multiline || false}
                         rows={field.multiline ? field.rows || 4 : undefined}
+                        onChange={handleInputChange}
                     />
                 ))}
             </DialogContent>
@@ -63,8 +63,8 @@ export const Modal: React.FC<ModalProps> = ({
                 </Button>
                 <Button
                     color="success"
-                    onClick={handleSubmit}
                     variant="outlined"
+                    onClick={handleSubmit}
                 >
                     Отправить
                 </Button>

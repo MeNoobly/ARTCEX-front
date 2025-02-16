@@ -1,7 +1,7 @@
 .app {
     height: 100%;
     width: 100%;
-    background: rgb(199, 196, 196);
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,4 +19,13 @@
     justify-content: center;
     align-items: center;
     padding: 0 25px;
+    max-width: 1030px;
+}
+
+.textBlock {
+    background-color: #18092c;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 30px;
+    margin: 20px 0;
 }

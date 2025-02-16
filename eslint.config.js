@@ -118,7 +118,7 @@ export default [
                     indentLogicalExpressions: true,
                 },
             ],
-            'react/jsx-indent-props': ['error', 2],
+            'react/jsx-indent-props': ['error', 4],
             'react/jsx-closing-tag-location': 'error',
             'react/jsx-closing-bracket-location': 'error',
             'react/jsx-wrap-multilines': [

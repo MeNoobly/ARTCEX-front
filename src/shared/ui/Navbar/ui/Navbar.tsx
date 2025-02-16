@@ -2,6 +2,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import MenuIcon from '@mui/icons-material/Menu'
 import PhoneIcon from '@mui/icons-material/Phone'
 import TelegramIcon from '@mui/icons-material/Telegram'
+import { Box } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
@@ -9,7 +10,8 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import { FC, useState } from 'react'
 
-import { Join } from '../../../../widgets/Join'
+import { Join } from '@/widgets/Join'
+
 import styles from './Navbar.module.scss'
 
 export const Navbar: FC = () => {
@@ -24,13 +26,10 @@ export const Navbar: FC = () => {
     }
 
     const menuItems = [
-        { label: 'О нас', link: '#about' },
-        { label: 'О наших курсах и студиях, проектах', link: '#courses' },
-        { label: 'Блог', link: '#blog' },
-        { label: 'Команда педагогов', link: '#team' },
-        { label: 'Актерское агентство', link: '#agency' },
-        { label: 'Галерея', link: '#gallery' },
-        { label: 'Расписание занятий', link: '#schedule' },
+        { label: 'О школе', link: '#about' },
+        { label: 'Обучение', link: '#courses' },
+        { label: 'Новости', link: '#news' },
+        { label: 'Контакты', link: '#team' },
     ]
 
     return (
@@ -48,10 +47,10 @@ export const Navbar: FC = () => {
                         </a>
                     ))}
                 </div>
-                <div>
-                    <Join isShort />
-                </div>
                 <div className={styles.actions}>
+                    <Box sx={{ marginRight: '10px' }}>
+                        <Join isShort />
+                    </Box>
                     <a href="tel:79165072449">
                         <IconButton
                             edge="start"
@@ -82,30 +81,33 @@ export const Navbar: FC = () => {
                             <InstagramIcon />
                         </IconButton>
                     </a>
-                    <IconButton
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        onClick={handleMenuOpen}
-                        className={styles.btn}
+                    <Box className={styles.menuButton}>
+                        <IconButton
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            className={styles.btn}
+                            onClick={handleMenuOpen}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    </Box>
+
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        className={styles.menu}
+                        onClose={handleMenuClose}
                     >
-                        <MenuIcon />
-                    </IconButton>
+                        {menuItems.map((item, index) => (
+                            <MenuItem key={index} onClick={handleMenuClose}>
+                                <a href={item.link} className={styles.menuItem}>
+                                    {item.label}
+                                </a>
+                            </MenuItem>
+                        ))}
+                    </Menu>
                 </div>
-                <Menu
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleMenuClose}
-                    className={styles.menu}
-                >
-                    {menuItems.map((item, index) => (
-                        <MenuItem key={index} onClick={handleMenuClose}>
-                            <a href={item.link} className={styles.menuItem}>
-                                {item.label}
-                            </a>
-                        </MenuItem>
-                    ))}
-                </Menu>
             </Toolbar>
         </AppBar>
     )

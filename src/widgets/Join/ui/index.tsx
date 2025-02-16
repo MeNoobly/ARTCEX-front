@@ -23,7 +23,7 @@ export const Join: FC<JoinProps> = ({ isShort = false }) => {
                 type="button"
                 variant="contained"
                 sx={{
-                    backgroundColor: 'black',
+                    backgroundColor: 'red',
                 }}
                 onClick={handleOpen}
             >
@@ -31,7 +31,6 @@ export const Join: FC<JoinProps> = ({ isShort = false }) => {
             </Button>
             <Modal
                 open={isModalOpen}
-                onClose={handleClose}
                 title="Записаться на пробное занятие"
                 fields={[
                     {
@@ -46,6 +45,7 @@ export const Join: FC<JoinProps> = ({ isShort = false }) => {
                         rows: 6,
                     },
                 ]}
+                onClose={handleClose}
                 onSubmit={handleSubmit}
             />
         </div>

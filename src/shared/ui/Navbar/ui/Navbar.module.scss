@@ -5,7 +5,7 @@
 }
 
 .toolbar {
-    background-color: #b9b0b094;
+    background-color: #18092c;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +20,7 @@
     display: flex;
     gap: 16px;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 715px) {
         display: none;
     }
 }

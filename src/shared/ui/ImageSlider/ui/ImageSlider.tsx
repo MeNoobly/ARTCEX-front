@@ -12,17 +12,17 @@ export const ImageSlider: FC = () => {
     return (
         <div className={styles.slider}>
             <Swiper
+                navigation
+                loop
                 modules={[Autoplay, Navigation, Pagination]}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
-                navigation
                 pagination={{ clickable: true }}
-                loop
                 className="w-full h-full"
             >
                 <SwiperSlide>
                     <div className={styles.slide}>
                         <img
-                            src="/img/bg.jpg"
+                            src="/img/1.webp"
                             alt="Image 1"
                             className={styles.img}
                         />
@@ -31,35 +31,8 @@ export const ImageSlider: FC = () => {
                 <SwiperSlide>
                     <div className={styles.slide}>
                         <img
-                            src="/img/bg.jpg"
-                            alt="Image 1"
-                            className={styles.img}
-                        />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className={styles.slide}>
-                        <img
-                            src="/img/bg.jpg"
-                            alt="Image 1"
-                            className={styles.img}
-                        />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className={styles.slide}>
-                        <img
-                            src="/img/bg.jpg"
-                            alt="Image 1"
-                            className={styles.img}
-                        />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className={styles.slide}>
-                        <img
-                            src="/img/bg.jpg"
-                            alt="Image 1"
+                            src="/img/2.jpg"
+                            alt="Image 2"
                             className={styles.img}
                         />
                     </div>
