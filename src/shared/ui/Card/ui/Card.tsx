@@ -6,7 +6,7 @@ export const Card: FC = () => {
     return (
         <div className={styles.card}>
             <img src="/img/3.jpg" alt="Image" />
-            <p>Курс Фильммейкинг</p>
+            <p>Киношкола</p>
         </div>
     )
 }

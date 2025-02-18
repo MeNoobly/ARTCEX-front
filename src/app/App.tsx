@@ -10,7 +10,7 @@ const App: FC = () => {
             <Navbar />
             <div className={styles.container}>
                 <h1 className={styles.title}>
-                    Мастерская театра и кино «Артцех»
+                    Мастерская театра и кино АРТЦЕХ
                 </h1>
                 <div style={{ marginBottom: '20px' }}>
                     <ImageSlider />

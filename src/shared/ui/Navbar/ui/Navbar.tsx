@@ -26,9 +26,15 @@ export const Navbar: FC = () => {
     }
 
     const menuItems = [
-        { label: 'О школе', link: '#about' },
-        { label: 'Обучение', link: '#courses' },
-        { label: 'Новости', link: '#news' },
+        { label: 'О нас', link: '#about' },
+        { label: 'Обучение', link: '#about' },
+        { label: 'Проекты', link: '#courses' },
+        { label: 'Продакшн', link: '#news' },
+        { label: 'Лагерь', link: '#team' },
+        { label: 'Актерское агентство', link: '#team' },
+        { label: 'Мастер-классы', link: '#team' },
+        { label: 'Педагоги', link: '#team' },
+        { label: 'Отзывы', link: '#team' },
         { label: 'Контакты', link: '#team' },
     ]
 
