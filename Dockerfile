@@ -28,5 +28,11 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Объявляем, что контейнер будет слушать порт 80
 EXPOSE 80
 
+FROM nginx:alpine
+# Удаляем стандартный файл конфигурации Nginx
+RUN rm /etc/nginx/conf.d/default.conf
+# Копируем наш кастомный файл конфигурации в контейнер
+COPY custom-nginx.conf /etc/nginx/conf.d/
+
 # Запускаем Nginx в foreground режиме
 CMD ["nginx", "-g", "daemon off;"]
