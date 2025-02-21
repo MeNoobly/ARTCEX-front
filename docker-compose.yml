@@ -6,6 +6,6 @@ services:
             context: .
             dockerfile: Dockerfile
         ports:
-            - '3000:80'
+            - '3000:80' # Пробрасываем порт 80 контейнера на 3000 порт хоста
         container_name: react-app
-        restart: unless-stopped
+        restart: unless-stopped # Автоматически перезапускаем контейнер если он падает

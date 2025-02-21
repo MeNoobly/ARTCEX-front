@@ -12,7 +12,13 @@ interface ModalProps {
     open: boolean
     onClose: () => void
     title: string
-    fields: { name: string; label: string; type?: string }[]
+    fields: {
+        name: string
+        label: string
+        type?: string
+        multiline?: boolean
+        rows?: number
+    }[]
     onSubmit: (values: Record<string, string>) => void
 }
 
