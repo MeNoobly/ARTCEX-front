@@ -19,20 +19,14 @@ RUN npm run build
 # Используем образ Nginx для раздачи собранного приложения
 FROM nginx:alpine
 
-# Копируем собранные файлы из /app/build в директорию для статики Nginx
+# Копируем собранные файлы из /app/dist в директорию для статики Nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# (Опционально) Копируем конфигурацию Nginx, если есть кастомные настройки
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Копируем кастомную конфигурацию Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Объявляем, что контейнер будет слушать порт 80
 EXPOSE 80
-
-FROM nginx:alpine
-# Удаляем стандартный файл конфигурации Nginx
-RUN rm /etc/nginx/conf.d/default.conf
-# Копируем наш кастомный файл конфигурации в контейнер
-COPY custom-nginx.conf /etc/nginx/conf.d/
 
 # Запускаем Nginx в foreground режиме
 CMD ["nginx", "-g", "daemon off;"]

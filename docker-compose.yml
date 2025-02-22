@@ -1,9 +1,11 @@
+version: '3.8' # Версия схемы Docker Compose
+
 services:
     react-app:
         build:
-            context: .
-            dockerfile: Dockerfile
+            context: . # Указываем текущую директорию как контекст сборки
+            dockerfile: Dockerfile # Указываем имя Dockerfile
         ports:
-            - '3000:80' # Пробрасываем порт 80 контейнера на 3000 порт хоста
-        container_name: react-app
-        restart: unless-stopped # Автоматически перезапускаем контейнер если он падает
+            - '80:80' # Пробрасываем порт 3000 контейнера на порт 3000 хоста
+        container_name: react-app # Имя контейнера
+        restart: unless-stopped # Автоматически перезапускать контейнер, если он падает
