@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { Card, ImageSlider, Navbar } from '@/shared'
+import { cards } from '@/shared/consts/cards'
 
 import styles from './App.module.scss'
 
@@ -23,12 +24,7 @@ const App: FC = () => {
                         gridTemplateColumns: '1fr 1fr',
                     }}
                 >
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    {cards?.map((card) => <Card key={card?.id} card={card} />)}
                 </div>
                 <div className={styles.textBlock}>
                     АРТЦЕХ — это площадка для творчества и развития личности
