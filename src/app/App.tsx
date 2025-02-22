@@ -16,14 +16,7 @@ const App: FC = () => {
                 <div style={{ marginBottom: '20px' }}>
                     <ImageSlider />
                 </div>
-                <div
-                    style={{
-                        maxWidth: '70vw',
-                        display: 'grid',
-                        gap: '20px',
-                        gridTemplateColumns: '1fr 1fr',
-                    }}
-                >
+                <div className={styles.cardsContainer}>
                     {cards?.map((card) => <Card key={card?.id} card={card} />)}
                 </div>
                 <div className={styles.textBlock}>

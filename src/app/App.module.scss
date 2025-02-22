@@ -29,3 +29,15 @@
     padding: 30px;
     margin: 20px 0;
 }
+
+.cardsContainer {
+    max-width: 70vw;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 768px) {
+        max-width: 90vw;
+        grid-template-columns: 1fr;
+    }
+}
