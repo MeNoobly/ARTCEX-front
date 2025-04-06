@@ -22,9 +22,7 @@ export const Join: FC<JoinProps> = ({ isShort = false }) => {
             <Button
                 type="button"
                 variant="contained"
-                sx={{
-                    backgroundColor: 'red',
-                }}
+                color="secondary"
                 onClick={handleOpen}
             >
                 {isShort ? 'Записаться' : 'Записаться на пробное занятие'}

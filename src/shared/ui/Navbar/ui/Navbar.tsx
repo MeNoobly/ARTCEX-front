@@ -9,6 +9,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import { FC, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Join } from '@/widgets/Join'
 
@@ -26,16 +27,14 @@ export const Navbar: FC = () => {
     }
 
     const menuItems = [
-        { label: 'О нас', link: '#about' },
-        { label: 'Обучение', link: '#about' },
-        { label: 'Проекты', link: '#courses' },
-        { label: 'Продакшн', link: '#news' },
-        { label: 'Лагерь', link: '#team' },
-        { label: 'Актерское агентство', link: '#team' },
-        { label: 'Мастер-классы', link: '#team' },
-        { label: 'Педагоги', link: '#team' },
-        { label: 'Отзывы', link: '#team' },
-        { label: 'Контакты', link: '#team' },
+        { label: 'Театр-студия', link: '/theater-studio' },
+        { label: 'Киношкола ', link: '/cinema-school' },
+        { label: 'Арт-мастерская ', link: '/art-masterskaya' },
+        { label: 'Вокал', link: '/vocal' },
+        { label: 'Мастер-классы', link: '/master-classes' },
+        { label: 'Летний лагерь', link: '/summer-camp' },
+        { label: 'События ', link: '/events' },
+        { label: 'Контакты', link: '/contacts' },
     ]
 
     return (
@@ -45,7 +44,13 @@ export const Navbar: FC = () => {
             sx={{ bgcolor: 'black' }}
         >
             <Toolbar className={styles.toolbar}>
-                <img src="/img/logo.svg" alt="Logo" className={styles.logo} />
+                <Link to="/">
+                    <img
+                        src="/img/logo.svg"
+                        alt="Logo"
+                        className={styles.logo}
+                    />
+                </Link>
                 <div className={styles.links}>
                     {menuItems.map((item, index) => (
                         <a key={index} href={item.link} className={styles.link}>
