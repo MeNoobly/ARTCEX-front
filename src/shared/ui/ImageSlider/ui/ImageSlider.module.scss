@@ -1,15 +1,18 @@
 .slider {
-    width: 70vw;
-    height: 70vh;
+    width: 90vw;
 }
 
 .slide {
-    width: 70vw;
-    height: 70vh;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .img {
-    width: 70vw;
-    height: 70vh;
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }

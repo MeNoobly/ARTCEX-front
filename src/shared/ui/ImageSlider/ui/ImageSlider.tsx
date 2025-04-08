@@ -1,6 +1,6 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
-import 'swiper/css/autoplay' // Добавьте эту строку для стилей автопрокрутки
+import 'swiper/css/autoplay'
 
 import { FC } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
@@ -9,6 +9,16 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import styles from './ImageSlider.module.scss'
 
 export const ImageSlider: FC = () => {
+    const imagesPaths = [
+        '/img/main/intro/1.jpg',
+        '/img/main/intro/2.jpg',
+        '/img/main/intro/3.jpg',
+        '/img/main/intro/4.jpg',
+        '/img/main/intro/5.jpg',
+        '/img/main/intro/6.jpg',
+        '/img/main/intro/7.jpg',
+    ]
+
     return (
         <div className={styles.slider}>
             <Swiper
@@ -19,24 +29,17 @@ export const ImageSlider: FC = () => {
                 pagination={{ clickable: true }}
                 className="w-full h-full"
             >
-                <SwiperSlide>
-                    <div className={styles.slide}>
-                        <img
-                            src="/img/1.webp"
-                            alt="Image 1"
-                            className={styles.img}
-                        />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className={styles.slide}>
-                        <img
-                            src="/img/2.jpg"
-                            alt="Image 2"
-                            className={styles.img}
-                        />
-                    </div>
-                </SwiperSlide>
+                {imagesPaths?.map((path, index) => (
+                    <SwiperSlide key={index}>
+                        <div className={styles.slide}>
+                            <img
+                                src={path}
+                                alt={`Интро ${index + 1}`}
+                                className={styles.img}
+                            />
+                        </div>
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </div>
     )

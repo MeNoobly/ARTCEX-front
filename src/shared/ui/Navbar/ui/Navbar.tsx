@@ -27,14 +27,14 @@ export const Navbar: FC = () => {
     }
 
     const menuItems = [
-        { label: 'Театр-студия', link: '/theater-studio' },
+        // { label: 'Театр-студия', link: '/theater-studio' },
         { label: 'Киношкола ', link: '/cinema-school' },
         { label: 'Арт-мастерская ', link: '/art-masterskaya' },
-        { label: 'Вокал', link: '/vocal' },
+        // { label: 'Вокал', link: '/vocal' },
         { label: 'Мастер-классы', link: '/master-classes' },
         { label: 'Летний лагерь', link: '/summer-camp' },
-        { label: 'События ', link: '/events' },
-        { label: 'Контакты', link: '/contacts' },
+        // { label: 'События ', link: '/events' },
+        // { label: 'Контакты', link: '/contacts' },
     ]
 
     return (
